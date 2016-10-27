@@ -1,3 +1,6 @@
+<?php
+$file = basename(__FILE__);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +13,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" media="screen">
   </head>
   <body>
-    <div class="navbar navbar-default navbar-fixed-top">
+    <!--<div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <a href="index.html" class="navbar-brand">Test PHP — Pagination</a>
@@ -39,8 +42,11 @@
 
         </div>
       </div>
-    </div>
-
+    </div>-->
+    <?php
+    // Inclure la barre de navigation
+    include "Templates/navbar.php";
+    ?>
 
     <div class="container">
 
