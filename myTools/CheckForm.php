@@ -25,6 +25,8 @@ function CheckText($formName, $frmEntry, $post) {
     } elseif ($_SESSION['forms'][$formName][$frmEntry]['is_required']) {
         $_SESSION['forms'][$formName][$frmEntry]['errors'][] = "Please enter a " . strtolower($_SESSION['forms'][$formName][$frmEntry]['label'] . "...");
         $_SESSION['forms'][$formName]['error'] = true;
+    } else {
+        $_SESSION['forms'][$formName][$frmEntry]['value'] = "";
     }
 }
 

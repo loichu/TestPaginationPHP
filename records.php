@@ -2,7 +2,7 @@
 // Inclure mes outils PHP/HTML
 include "myTools/SessionTools.php";
 include "myTools/HTMLtools.php";
-
+//killSession();
 debug($_SESSION);
 
 // Connaître le nom du fichier courant
@@ -71,7 +71,7 @@ $releases = $jfo->releases;
                      * - Stocker le numéro de page dans la session
                      */
                     $page = !isset($_GET['page']) ? (!isset($_SESSION['page']) ? 1 : $_SESSION['page']) : $_GET['page']; // Le numéro de page.
-                    $limit = !isset($_SESSION['forms'][$formName]["$nbName"]['value']) ? 10 : $_SESSION[$formName]['nbResults']['value']; // Nombre de résultats par page.
+                    $limit = empty($_SESSION['forms'][$formName][$nbName]['value']) ? 10 : $_SESSION['forms'][$formName][$nbName]['value']; // Nombre de résultats par page.
                     $offset = ($page - 1) * $limit; // Offset
                     $total_items = count($releases); // Nombre de résultats
                     $total_pages = ceil($total_items / $limit); // Nombre de pages
